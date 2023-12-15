@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+
+	<Student username="a">
+		<Password>A</Password>
+		<Name>Test</Name>
+		<StudentNumber>1234</StudentNumber>
+		<SupervisorCode>A</SupervisorCode>
+	</Student>
+
+	<Student username="Student15!">
+		<Password>P@ssw0rd!</Password>
+		<Name>Adam Apples</Name>
+		<StudentNumber>1864689</StudentNumber>
+		<SupervisorCode>A</SupervisorCode>
+	</Student>
+
+	<Student username="BenOD">
+		<Password>BenODpass!</Password>
+		<StudentNumber>9875775</StudentNumber>
+		<Name>Ben Olive Dove</Name>
+		<SupervisorCode>A</SupervisorCode>
+	</Student>
+
+	<Student username="CutieAimee33">
+		<Password>Thissismypass!</Password>
+		<Name>Aimee Manchester</Name>
+		<StudentNumber>4529069</StudentNumber>
+		<SupervisorCode>B</SupervisorCode>
+	</Student>
+
+	<Student username="TheGNShow">
+		<Password>GNShow1985!</Password>
+		<Name>Graham Norton</Name>
+		<StudentNumber>9876543</StudentNumber>
+		<SupervisorCode>B</SupervisorCode>
+	</Student>
+
+	<Student username="UserStu16">
+		<Password>Thisismypa55!</Password>
+		<Name>Stewart Humpertdickle</Name>
+		<StudentNumber>0098642</StudentNumber>
+		<SupervisorCode>B</SupervisorCode>
+	</Student>
+
+	<PersonalSupervisor username="b">
+		<Password>B</Password>
+		<Name>TestPs</Name>
+		<SupervisorCode>A</SupervisorCode>
+	</PersonalSupervisor>
+
+</root>
