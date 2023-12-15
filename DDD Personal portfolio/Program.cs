@@ -194,17 +194,31 @@ void BookappointmentSt(Student student)
     Console.WriteLine("Not implimented yet.");
 }
 
-void BookappointmentPs(PersonalSupervisor personalSupervisor)
+void BookappointmentPs(PersonalSupervisor personalSupervisor, Student student = null)
 {
-    int i = 1;
-    Console.WriteLine("Please choose a student from the list below you wish to meet:");
-    foreach (Student x in students)
+    Student selectedStudent;
+    if (student == null)
     {
-        if (x.SupervisorCode == personalSupervisor.SupervisorCode)
+        Console.WriteLine("Please choose a student from the list below you wish to meet:");
+        List<Student> matchingStudents = new List<Student>();
+        foreach (Student x in students)
         {
-            Console.WriteLine($"{i}. {x.Name}");
-            i++;
+            if (x.SupervisorCode == personalSupervisor.SupervisorCode)
+            {
+                matchingStudents.Add(x);
+            }
         }
+
+        for (int i = 0; i < matchingStudents.Count; i++)
+        {
+            Console.WriteLine($"{i + 1}. {matchingStudents[i].Name}");
+        }
+
+        selectedStudent = matchingStudents[int.Parse(Console.ReadLine()) - 1];
+    }
+    else
+    {
+        selectedStudent = student;
     }
 }
 
@@ -266,7 +280,7 @@ void reviewStudentStatus(PersonalSupervisor personalSupervisor)
                     }
                     else if (userchoice == 1)
                     {
-                        BookappointmentPs(personalSupervisor);
+                        BookappointmentPs(personalSupervisor, selectedStudent);
                     }
                     else if (userchoice == 2)
                     {
