@@ -5,6 +5,7 @@ using DDD_Personal_portfolio;
 using System.Reflection.Metadata;
 using System.Xml.Serialization;
 using System.Diagnostics;
+using System.Runtime.InteropServices;
 
 Console.WriteLine("Hello, World!");
 Boolean debug = true;
@@ -21,10 +22,12 @@ xmlDoc2.Load("StudentReports.xml");
 // Select all <Student> nodes in the document
 XmlNodeList studentNodes = xmlDoc.SelectNodes("/root/Student");
 XmlNodeList psNodes = xmlDoc.SelectNodes("/root/PersonalSupervisor");
+XmlNodeList studentReportNodes = xmlDoc2.SelectNodes("/root/StudentReport");
 
 // Create a list to store the Personal suporvisor objects
 List<Student> students = new List<Student>();
 List<PersonalSupervisor> personalSupervisors = new List<PersonalSupervisor>();
+List<StudentReport> studentReports = new List<StudentReport>();
 
 // Iterate through each <Student> node and create Student objects
 foreach (XmlNode studentNode in studentNodes)
@@ -51,6 +54,21 @@ foreach (XmlNode psNode in psNodes)
     PersonalSupervisor personalSupervisor = new PersonalSupervisor(username, password, name, supervisorCode);
     personalSupervisors.Add(personalSupervisor);
 }
+
+foreach (XmlNode studentReportNode in studentReportNodes)
+{
+    int studentnumber = int.Parse(studentReportNode.SelectSingleNode("StudentNumber").InnerText);
+    string name = studentReportNode.SelectSingleNode("Name").InnerText;
+    int rating = int.Parse(studentReportNode.SelectSingleNode("Rating").InnerText);
+    string userResponse = studentReportNode.SelectSingleNode("UserResponse").InnerText;
+    string userAdditionalResponse = studentReportNode.SelectSingleNode("UserAdditionalResponse").InnerText;
+    string time = studentReportNode.SelectSingleNode("Time").InnerText;
+
+    // Create a new Student object and add it to the list
+    StudentReport studentReport = new StudentReport(studentnumber, name, rating, userResponse, userAdditionalResponse, time);
+    studentReports.Add(studentReport);
+}
+
 // Now you have a list of Student objects, and you can use them as needed
 if (debug == true)
 {
@@ -59,7 +77,7 @@ if (debug == true)
     {
         Console.WriteLine($"Username: {student.Username}, Password: {student.Password}, Name: {student.Name}, Supervisor Code: {student.SupervisorCode}");
     }
-    Console.WriteLine("Peronal Supervisors:");
+    Console.WriteLine("Personal Supervisors:");
     foreach (PersonalSupervisor personalSupervisor in personalSupervisors)
     {
         Console.WriteLine($"Username: {personalSupervisor.Username}, Password: {personalSupervisor.Password}, Name: {personalSupervisor.Name}, Supervisor Code: {personalSupervisor.SupervisorCode}");
@@ -192,7 +210,79 @@ void BookappointmentPs(PersonalSupervisor personalSupervisor)
 
 void reviewStudentStatus(PersonalSupervisor personalSupervisor)
 {
-    Console.WriteLine("Not implimented yet.");
+    Console.WriteLine("Please choose a student from the list below you wish to view the status of:");
+    List<Student> matchingStudents = new List<Student>();
+    foreach (Student x in students)
+    {
+        if (x.SupervisorCode == personalSupervisor.SupervisorCode)
+        {
+            matchingStudents.Add(x);
+        }
+    }
+
+    for (int i = 0; i < matchingStudents.Count; i++)
+    {
+        Console.WriteLine($"{i + 1}. {matchingStudents[i].Name}");
+    }
+
+    Student selectedStudent = matchingStudents[int.Parse(Console.ReadLine()) - 1];
+
+    int numberOfReports = 0;
+
+    foreach (StudentReport x in studentReports)
+    {
+        if (selectedStudent.StudentNumber == x.StudentNumber)
+        {
+            numberOfReports++;
+            Console.WriteLine($"Report taken from student at {x.Time}");
+            Console.WriteLine("Your Student is Currently feeling like they are progressing at a rating of:");
+            Console.WriteLine($"{x.Progressing}/10");
+            Console.WriteLine("They have said that they are currently feeling:");
+            Console.WriteLine($"{x.StudentFeelings}");
+            Console.WriteLine("They have left the following additional information:");
+            Console.WriteLine($"{x.AdditionalReport}");
+
+            if (x.Progressing > 4)
+            {
+                Console.WriteLine("The low progression score indicates that your student feeels that they may be struggling, maybe book a meeting?");
+            }
+
+            if (numberOfReports == 0)
+            {
+                Console.WriteLine("This student has not given feedback yet.");
+            }
+            Console.WriteLine("Please select one of the following:");
+            Console.WriteLine("1.Book a meeting");
+            Console.WriteLine("2.Return to main screen");
+            Boolean looplock = false;
+            while (!looplock) 
+            {
+                try
+                {
+                    int userchoice = int.Parse(Console.ReadLine());
+                    if (userchoice < 0 || userchoice > 2)
+                    {
+                        Console.WriteLine("That is an invalid choice please choose again.");
+                    }
+                    else if (userchoice == 1)
+                    {
+                        BookappointmentPs(personalSupervisor);
+                    }
+                    else if (userchoice == 2)
+                    {
+                        looplock = true;
+                        break;
+                    }
+                }
+                catch
+                {
+                    Console.WriteLine("Please enter a number.");
+                }
+
+            }
+
+        }
+    }
 }
 
 void StudentStatusReport(Student student)
@@ -311,13 +401,38 @@ void StudentStatusReport(Student student)
 
         XmlNode StudentReport = xmlDoc.CreateElement("StudentReport");
         XmlNode studentnumber = xmlDoc.CreateElement("StudentNumber");
+        XmlNode name = xmlDoc.CreateElement("Name");
+        XmlNode ratings = xmlDoc.CreateElement("Rating");
+        XmlNode userresponse = xmlDoc.CreateElement("UserResponse");
+        XmlNode useradditionalresponse = xmlDoc.CreateElement("UserAdditionalResponse");
+        XmlNode timeofreport = xmlDoc.CreateElement("Time");
         studentnumber.InnerText = studentReport.StudentNumber.ToString();
+        name.InnerText = studentReport.Name.ToString();
+        ratings.InnerText = studentReport.Progressing.ToString();
+        userresponse.InnerText = studentReport.StudentFeelings.ToString();
+        useradditionalresponse.InnerText = studentReport.AdditionalReport.ToString();
+        timeofreport.InnerText = studentReport.Time.ToString();
+
         StudentReport.AppendChild(studentnumber);
+        StudentReport.AppendChild(name);
+        StudentReport.AppendChild(ratings);
+        StudentReport.AppendChild(userresponse);
+        StudentReport.AppendChild(useradditionalresponse);
+        StudentReport.AppendChild(timeofreport);
 
         xmlDoc.DocumentElement.AppendChild(StudentReport);
 
-        xmlDoc.Save("StudentReports.xml"); // Save the document to a file
+
+        string path = Directory.GetCurrentDirectory();
+
+        string truePath = path.Remove(path.Length - 17);
+
+        truePath = truePath + @"\StudentReports.xml";
+
+
+        xmlDoc.Save(truePath);
 
         if (debug) Console.WriteLine($"New student report added to XML document.");
     }
 }
+

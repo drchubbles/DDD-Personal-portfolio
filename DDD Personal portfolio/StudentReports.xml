@@ -1,4 +1,22 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-	
+
+	<StudentReport>
+		<StudentNumber>1864689</StudentNumber>
+		<Name>Adam Apples</Name>
+		<Rating>3</Rating>
+		<UserResponse>I am really struggling</UserResponse>
+		<UserAdditionalResponse>Thanks for all your help</UserAdditionalResponse>
+		<Time>15/12/2023 04:13:52</Time>
+	</StudentReport>
+
+	<StudentReport>
+		<StudentNumber>1234</StudentNumber>
+		<Name>Test</Name>
+		<Rating>7</Rating>
+		<UserResponse>I have enjoyed the course but struggled to get myself focussed sometimes.</UserResponse>
+		<UserAdditionalResponse>Thanks for all your help</UserAdditionalResponse>
+		<Time>15/12/2023 04:13:52</Time>
+	</StudentReport>
+
 </root>
