@@ -13,16 +13,17 @@ namespace DDD_Personal_portfolio
         public string Name { get; set; }
         public string SupervisorCode { get; set; }
 
-        // List of available booking hours represented as integers (e.g., 8, 10, 11, 13, 16)
-        public List<int> AvailableBookingHours { get; set; }
+        public int AmountOfMeetingRequests { get; set; }
+        public List<string> Availability { get; set; }
 
-        public PersonalSupervisor(string username, string password, string name, string supervisorCode)
+        public PersonalSupervisor(string username, string password, string name, string supervisorCode, int amountOfMeetingRequests, List<string> availability)
         {
             Username = username;
             Password = password;
             Name = name;
             SupervisorCode = supervisorCode;
-            AvailableBookingHours = new List<int>();
+            AmountOfMeetingRequests = amountOfMeetingRequests;
+            Availability = availability;
         }
     }
 }

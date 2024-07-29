@@ -1,0 +1,309 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <Student username="a">
+    <Password>A</Password>
+    <Name>Test</Name>
+    <StudentNumber>1234</StudentNumber>
+    <SupervisorCode>A</SupervisorCode>
+    <Availability>
+      <string>9AM</string>
+      <string>9:30AM</string>
+      <string>11AM</string>
+      <string>11:30PM</string>
+      <string>1PM</string>
+      <string>3:30PM</string>
+      <string>4PM</string>
+    </Availability>
+  </Student>
+  <Student username="Student15!">
+    <Password>P@ssw0rd!</Password>
+    <Name>Adam Apples</Name>
+    <StudentNumber>1864689</StudentNumber>
+    <SupervisorCode>A</SupervisorCode>
+    <Availability>
+      <string>9AM</string>
+      <string>9:30AM</string>
+      <string>11AM</string>
+      <string>11:30PM</string>
+      <string>1PM</string>
+      <string>2PM</string>
+      <string>3:30PM</string>
+      <string>4PM</string>
+    </Availability>
+  </Student>
+  <Student username="BenOD">
+    <Password>BenODpass!</Password>
+    <StudentNumber>9875775</StudentNumber>
+    <Name>Ben Olive Dove</Name>
+    <SupervisorCode>A</SupervisorCode>
+  </Student>
+  <Student username="Amy33">
+    <Password>Thissismypass!</Password>
+    <Name>Amy Liverpool</Name>
+    <StudentNumber>4529069</StudentNumber>
+    <SupervisorCode>B</SupervisorCode>
+  </Student>
+  <Student username="TheGNShow">
+    <Password>GNShow1985!</Password>
+    <Name>Graham Norton</Name>
+    <StudentNumber>9876543</StudentNumber>
+    <SupervisorCode>B</SupervisorCode>
+  </Student>
+  <Student username="UserStu16">
+    <Password>Thisismypa55!</Password>
+    <Name>Stewart Humpertdickle</Name>
+    <StudentNumber>0098642</StudentNumber>
+    <SupervisorCode>B</SupervisorCode>
+  </Student>
+  <PersonalSupervisor username="b">
+    <Password>B</Password>
+    <Name>TestPs</Name>
+    <SupervisorCode>A</SupervisorCode>
+    <Availability>
+      <string>10:30AM</string>
+      <string>11AM</string>
+      <string>12:30PM</string>
+      <string>1PM</string>
+      <string>3:30PM</string>
+      <string>11:40AM</string>
+      <string>3:50PM</string>
+      <string>6PM</string>
+    </Availability>
+    <AmountOfMeetingRequests>
+      <int>0</int>
+    </AmountOfMeetingRequests>
+  </PersonalSupervisor>
+  <Student username="EmeliaM">
+    <Password>Emelia123!</Password>
+    <Name>Emelia Mason</Name>
+    <StudentNumber>3456789</StudentNumber>
+    <SupervisorCode>A</SupervisorCode>
+    <Availability>
+      <string>9AM</string>
+      <string>10AM</string>
+      <string>11AM</string>
+      <string>1:10PM</string>
+      <string>2PM</string>
+      <string>3:20PM</string>
+      <string>4PM</string>
+    </Availability>
+  </Student>
+  <Student username="JamesLee24">
+    <Password>JamesML24!</Password>
+    <Name>James Lee</Name>
+    <StudentNumber>1234567</StudentNumber>
+    <SupervisorCode>B</SupervisorCode>
+    <Availability>
+      <string>9AM</string>
+      <string>9:30AM</string>
+      <string>10AM</string>
+      <string>11AM</string>
+      <string>1PM</string>
+      <string>2:20PM</string>
+      <string>3PM</string>
+      <string>4:30PM</string>
+    </Availability>
+  </Student>
+  <PersonalSupervisor username="DrRachelG">
+    <Password>RachelAI2024!</Password>
+    <Name>Dr. Rachel Green</Name>
+    <SupervisorCode>C</SupervisorCode>
+    <Availability>
+      <string>10AM</string>
+      <string>11AM</string>
+      <string>12PM</string>
+      <string>1PM</string>
+      <string>2PM</string>
+      <string>3PM</string>
+      <string>4PM</string>
+      <string>5PM</string>
+    </Availability>
+    <AmountOfMeetingRequests>
+      <int>0</int>
+    </AmountOfMeetingRequests>
+  </PersonalSupervisor>
+  <PersonalSupervisor username="DavidWebb">
+    <Password>David!</Password>
+    <Name>Dr David Web</Name>
+    <SupervisorCode>B</SupervisorCode>
+    <Availability>
+      <string>9AM</string>
+      <string>10AM</string>
+      <string>11AM</string>
+      <string>1PM</string>
+      <string>2PM</string>
+      <string>3PM</string>
+      <string>4PM</string>
+      <string>5PM</string>
+    </Availability>
+    <AmountOfMeetingRequests>
+      <int>0</int>
+    </AmountOfMeetingRequests>
+  </PersonalSupervisor>
+  <Student username="MeiZhang21">
+    <Password>MeiZ1234!</Password>
+    <Name>Mei Zhang</Name>
+    <StudentNumber>4567890</StudentNumber>
+    <SupervisorCode>B</SupervisorCode>
+    <Availability>
+      <string>9AM</string>
+      <string>10AM</string>
+      <string>11AM</string>
+      <string>1PM</string>
+      <string>2PM</string>
+      <string>3PM</string>
+      <string>4PM</string>
+    </Availability>
+  </Student>
+  <Student username="AhmedK37">
+    <Password>AhmedK123!</Password>
+    <Name>Ahmed Khan</Name>
+    <StudentNumber>7890123</StudentNumber>
+    <SupervisorCode>B</SupervisorCode>
+    <Availability>
+      <string>9AM</string>
+      <string>10AM</string>
+      <string>11AM</string>
+      <string>1PM</string>
+      <string>2PM</string>
+      <string>3PM</string>
+      <string>4PM</string>
+    </Availability>
+  </Student>
+  <Student username="LiamP34">
+    <Password>LiamPass123!</Password>
+    <Name>Liam Parker</Name>
+    <StudentNumber>2937489</StudentNumber>
+    <SupervisorCode>C</SupervisorCode>
+    <Availability>
+      <string>10AM</string>
+      <string>11AM</string>
+      <string>1PM</string>
+      <string>2PM</string>
+      <string>3PM</string>
+      <string>4PM</string>
+    </Availability>
+  </Student>
+  <Student username="SophiaM21">
+    <Password>SophiaPass127903!</Password>
+    <Name>Sophia Miller</Name>
+    <StudentNumber>23947301</StudentNumber>
+    <SupervisorCode>C</SupervisorCode>
+    <Availability>
+      <string>9AM</string>
+      <string>10AM</string>
+      <string>11AM</string>
+      <string>1PM</string>
+      <string>2PM</string>
+      <string>3PM</string>
+    </Availability>
+  </Student>
+  <Student username="NoahJ19">
+    <Password>Noahiscool!</Password>
+    <Name>Noah Johnson</Name>
+    <StudentNumber>9827364</StudentNumber>
+    <SupervisorCode>C</SupervisorCode>
+    <Availability>
+      <string>10AM</string>
+      <string>11AM</string>
+      <string>1PM</string>
+      <string>2PM</string>
+      <string>3PM</string>
+      <string>4PM</string>
+    </Availability>
+  </Student>
+  <Student username="OliviaS18">
+    <Password>OliviaPass123!</Password>
+    <Name>Olivia Smith</Name>
+    <StudentNumber>2937364</StudentNumber>
+    <SupervisorCode>C</SupervisorCode>
+    <Availability>
+      <string>9AM</string>
+      <string>10AM</string>
+      <string>11AM</string>
+      <string>1PM</string>
+      <string>2PM</string>
+      <string>3PM</string>
+    </Availability>
+  </Student>
+  <SeniorTutor username="DayvidPalarker2005 ">
+    <Password>SeniorPass19!</Password>
+    <Name>Dayvid Palarker</Name>
+  </SeniorTutor>
+  <SeniorTutor username="c">
+    <Password>C</Password>
+    <Name>Test SeniorTutor</Name>
+  </SeniorTutor>
+  <Meeting>
+    <SupervisorCode>A</SupervisorCode>
+    <StudentNumber>1234</StudentNumber>
+    <MeetingRegarding>To discuss my progress and get an idea of further steps I can take.</MeetingRegarding>
+    <Time>11AM</Time>
+  </Meeting>
+  <Meeting>
+    <SupervisorCode>C</SupervisorCode>
+    <StudentNumber>2937489</StudentNumber>
+    <MeetingRegarding>Evaluate my progress and get advice on thesis work.</MeetingRegarding>
+    <Time>10AM</Time>
+  </Meeting>
+  <Meeting>
+    <SupervisorCode>C</SupervisorCode>
+    <StudentNumber>23947301</StudentNumber>
+    <MeetingRegarding>Discuss coursework challenges and seek feedback.</MeetingRegarding>
+    <Time>11AM</Time>
+  </Meeting>
+  <Meeting>
+    <SupervisorCode>C</SupervisorCode>
+    <StudentNumber>9827364</StudentNumber>
+    <MeetingRegarding>Review progress and plan for upcoming exams.</MeetingRegarding>
+    <Time>2PM</Time>
+  </Meeting>
+  <Meeting>
+    <SupervisorCode>B</SupervisorCode>
+    <StudentNumber>4529069</StudentNumber>
+    <MeetingRegarding>Feedback on recent assignments and guidance for future work.</MeetingRegarding>
+    <Time>11AM</Time>
+  </Meeting>
+  <Meeting>
+    <SupervisorCode>B</SupervisorCode>
+    <StudentNumber>9876543</StudentNumber>
+    <MeetingRegarding>Clarify doubts and discuss project ideas.</MeetingRegarding>
+    <Time>1PM</Time>
+  </Meeting>
+  <Meeting>
+    <SupervisorCode>B</SupervisorCode>
+    <StudentNumber>0098642</StudentNumber>
+    <MeetingRegarding>Discuss performance and areas for improvement.</MeetingRegarding>
+    <Time>3PM</Time>
+  </Meeting>
+  <Meeting>
+    <SupervisorCode>A</SupervisorCode>
+    <StudentNumber>1864689</StudentNumber>
+    <MeetingRegarding>To discuss my academic performance and seek guidance on upcoming projects.</MeetingRegarding>
+    <Time>9AM</Time>
+  </Meeting>
+  <Meeting>
+    <SupervisorCode>A</SupervisorCode>
+    <StudentNumber>9875775</StudentNumber>
+    <MeetingRegarding>Review my current progress and plan for the next semester.</MeetingRegarding>
+    <Time>1PM</Time>
+  </Meeting>
+  <Meeting>
+    <SupervisorCode>A</SupervisorCode>
+    <StudentNumber>3456789</StudentNumber>
+    <MeetingRegarding>Discuss challenges faced in the current coursework and seek advice.</MeetingRegarding>
+    <Time>2PM</Time>
+  </Meeting>
+  <Meeting>
+    <SupervisorCode>C</SupervisorCode>
+    <StudentNumber>2937489</StudentNumber>
+    <MeetingRegarding>just a quick catch up.</MeetingRegarding>
+    <Time>10AM</Time>
+  </Meeting>
+  <Meeting>
+    <SupervisorCode>B</SupervisorCode>
+    <StudentNumber>1234567</StudentNumber>
+    <MeetingRegarding>Catch up so I can help you get back on track</MeetingRegarding>
+    <Time>10AM</Time>
+  </Meeting>
+</root>
