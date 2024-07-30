@@ -7,8 +7,8 @@ using System.Xml.Serialization;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Globalization;
-// Boolean variables to control debugging, showing all data, and loop lock status
-Boolean debug = false;  // Indicates if debugging information should be displayed
+// Boolean variables to control debuging, showing all data, and loop lock sttus
+Boolean debug = false;  // Indicates if debugging information should be dislayed
 Boolean ShowAll = false;  // Indicates if al data should be shown
 Boolean looplockTrue = true;  // Controls if teh loop should be locked
 
@@ -29,6 +29,7 @@ catch (Exception ex)
     return;
 }
 
+// This code was inspired by this code: https://stackoverflow.com/questions/37036311/reading-xmlnodelist
 // Select nodes from XML documents corresponding to different entities
 XmlNodeList studentNodes = xmlDoc.SelectNodes("/root/Student");
 XmlNodeList psNodes = xmlDoc.SelectNodes("/root/PersonalSupervisor");
@@ -43,6 +44,8 @@ List<SeniorTutor> seniorTutors = new List<SeniorTutor>();
 List<Meeting> meetings = new List<Meeting>();
 List<StudentReport> studentReports = new List<StudentReport>();
 
+
+// The skills shown in how to go through the child nodes were learned from here: https://stackoverflow.com/questions/11759426/how-can-i-iterate-though-each-child-node-in-an-xml-file
 // Process each student node in teh XML and create Student objects
 foreach (XmlNode studentNode in studentNodes)
 {
