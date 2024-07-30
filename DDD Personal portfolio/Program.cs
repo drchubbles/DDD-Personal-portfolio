@@ -7,6 +7,8 @@ using System.Xml.Serialization;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Globalization;
+
+//Some of the skills leaened in the code came from thsi website: https://www.w3schools.com/xml/default.ASP
 // Boolean variables to control debuging, showing all data, and loop lock sttus
 Boolean debug = false;  // Indicates if debugging information should be dislayed
 Boolean ShowAll = false;  // Indicates if al data should be shown
