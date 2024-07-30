@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DDD_Personal_portfolio
 {
-    internal class Student
+    public class Student
     {
         public string Username { get; set; }
         public string Password { get; set; }

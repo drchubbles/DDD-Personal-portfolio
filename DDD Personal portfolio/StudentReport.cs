@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DDD_Personal_portfolio
 {
-    internal class StudentReport
+    public class StudentReport
     {
         public int StudentNumber { get; set; }
         public string Name { get; set; }

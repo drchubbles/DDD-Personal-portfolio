@@ -477,7 +477,7 @@ void ViewBookedMeetingsPs(PersonalSupervisor personalSupervisor)
         Console.WriteLine($"Meetings for Personal Supervisor: {personalSupervisor.Name}");
 
         // Get the list of meetings for the personal supervisor
-        List<Meeting> supervisorMeetings = meetingss.Where(m => m.SupervisorCode == personalSupervisor.SupervisorCode).ToList();
+        List<Meeting> supervisorMeetings = meetings.Where(m => m.SupervisorCode == personalSupervisor.SupervisorCode).ToList();
 
         // Check if there are no meetngs found
         if (supervisorMeetings.Count == 0)

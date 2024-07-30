@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DDD_Personal_portfolio
 {
-    internal class Meeting
+    public class Meeting
     {
         public string SupervisorCode { get; set; }
         public int StudentNumber { get; set; }
