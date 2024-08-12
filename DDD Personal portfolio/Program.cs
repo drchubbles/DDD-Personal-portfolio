@@ -287,28 +287,28 @@ void StudentUserInterface(Student student)
     {
         try
         {
-            // Display the main menu options for the student
+            // Display the main menu optons for the sstudent
             Console.WriteLine($"Welcome to My Personal Supervisor Manager student!");
-            Console.WriteLine("Please choose from teh options:");
+            Console.WriteLine("Please choose from the options:");
             Console.WriteLine("1. Self Report how you are feeling / progressing.");
             Console.WriteLine("2. Book a meeting with your personal supervisor.");
             Console.WriteLine("3. View booked meetings.");
             Console.WriteLine("4. Update availability.");
             Console.WriteLine("5. Remove availability time.");
-            Console.WriteLine("6. Exit teh program.");
+            Console.WriteLine("6. Exit the program.");
 
-            // Read teh user's response
+            // Read tge user's response
             String userResponse = Console.ReadLine();
 
-            // Execute teh appropriate action based on the user's response
+            // Execute teh approriate action based on the user's response
             if (userResponse == "1")
             {
-                // If the user selects 1, call the function to report their status
+                // If the user selects 1, call the function to report their stabtus
                 StudentStatusReport(student);
             }
             else if (userResponse == "2")
             {
-                // If the user selects 2, call the function to book an appointment
+                // If the user selects 2, call the function to book an appintment
                 BookappointmentSt(student);
             }
             else if (userResponse == "3")
@@ -318,17 +318,17 @@ void StudentUserInterface(Student student)
             }
             else if (userResponse == "4")
             {
-                // If the user selects 4, call the function to update availability
+                // If the user selects 4, call the fnction to update availability
                 UpdateAvailabilityStudent(student);
             }
             else if (userResponse == "5")
             {
-                // If teh user selects 5, call the function to remove availability time
+                // If teh user selects 5, call the function to remove availbility time
                 RemoveAvailabilityTimeStu(student);
             }
             else if (userResponse == "6")
             {
-                // If the user selects 6, set looplockTrue to false and exit the program
+                // If the user selects 6, set looplockTrue to false and exit the prograam
                 looplockTrue = false;
                 Console.WriteLine("Exiting the program...");
                 Thread.Sleep(3000);  // Wait for 3 seconds before exiting
@@ -342,7 +342,7 @@ void StudentUserInterface(Student student)
         }
         catch (Exception ex)
         {
-            // Print error message if an exception occurs within the try block
+            // Print error message if an exception occurs within the try lbock
             Console.WriteLine("Error in student user interface: " + ex.Message);
         }
     }
@@ -443,7 +443,7 @@ void SenTutInterface(SeniorTutor seniorTutor)
             }
             else if (userResponse == "2")
             {
-                // If the user selects 2, call the function to review all student status
+                // If the user selects 2, call the funtion to review all student status
                 reviewAllStudentStatus(seniorTutor);
             }
             else if (userResponse == "3")
@@ -462,7 +462,7 @@ void SenTutInterface(SeniorTutor seniorTutor)
         }
         catch (Exception ex)
         {
-            // Print error message if an exception occurs within teh try block
+            // Print error message if an exception occurs in teh try block
             Console.WriteLine("Error in senior tutor user interface: " + ex.Message);
         }
     }
@@ -517,7 +517,6 @@ void ViewBookedMeetingsPs(PersonalSupervisor personalSupervisor)
         // Ask the user to confirm the cancellation
         Console.WriteLine($"Are you sure you want to cancel the meeting with student number {meetingToCancel.StudentNumber} at {meetingToCancel.Time}? (yes/no)");
 
-        // Check if the user confirms the cancellation
         if (Console.ReadLine().ToLower() == "yes")
         {
             // Call the function to cancel the meeting
@@ -526,7 +525,7 @@ void ViewBookedMeetingsPs(PersonalSupervisor personalSupervisor)
     }
     catch (Exception ex)
     {
-        // Print error message if an exception occurs within the try block
+        // Print error message if an exeption occurs in the try block
         Console.WriteLine("Error in viewing booked meetings for personal supervisor: " + ex.Message);
     }
 }
@@ -567,7 +566,6 @@ void ViewBookedMeetingStu(Student student)
             return;
         }
 
-        // Check if the selcted meeting index is invalid
         if (selectedMeetingIndex < 0 || selectedMeetingIndex >= studentMeetings.Count)
         {
             // Inform teh user that the selection is invalid
@@ -580,7 +578,6 @@ void ViewBookedMeetingStu(Student student)
         // Ask the user to confirm the cancellation
         Console.WriteLine($"Are you sure you want to cancel the meeting with supervisor code {meetingToCancel.SupervisorCode} at {meetingToCancel.Time}? (yes/no)");
 
-        // Check if the user confirms the cancellation
         if (Console.ReadLine().ToLower() == "yes")
         {
             // Call the function to cancel the meeting
@@ -610,10 +607,8 @@ void ViewBookedMeetingsSenTut(SeniorTutor seniorTutor)
         Console.WriteLine("Please select a Personal Supervisor by entering the corresponding number:");
         int psIndex = int.Parse(Console.ReadLine()) - 1;
 
-        // Check if the selected index is invalid
         if (psIndex < 0 || psIndex >= personalSupervisors.Count)
         {
-            // Inform the user that the selection is invalid
             Console.WriteLine("Invalid selection. Please try again.");
             return;
         }
@@ -621,7 +616,6 @@ void ViewBookedMeetingsSenTut(SeniorTutor seniorTutor)
         // Get the selected personal supervisor
         PersonalSupervisor selectedPS = personalSupervisors[psIndex];
 
-        // Display teh meetings for the selected personal supervisor
         Console.WriteLine($"Meetings for Personal Supervisor: {selectedPS.Name}");
 
         // Get the list of meetings for the selected persoal supervisor
@@ -1546,14 +1540,12 @@ void CancelMeeting(Meeting meeting)
                 student.Availability.Add(meeting.Time);
                 personalSupervisor.Availability.Add(meeting.Time);
 
-                // Get the current directory and construct the path to the XML file
                 string pathMeeting = Directory.GetCurrentDirectory();
                 string truePathMeeting = pathMeeting.Remove(pathMeeting.Length - 17) + @"\_Information.xml";
 
                 // Load the XML document
                 XDocument xmlDoc = XDocument.Load(truePathMeeting);
 
-                // Find and remove the meeting element from the XML document
                 XElement meetingElement = xmlDoc.Descendants("Meeting")
                     .FirstOrDefault(e => e.Element("SupervisorCode")?.Value == meeting.SupervisorCode &&
                                           e.Element("StudentNumber")?.Value == meeting.StudentNumber.ToString() &&
@@ -1576,8 +1568,6 @@ void CancelMeeting(Meeting meeting)
                 // Save the updated XML document
                 xmlDoc.Save(truePathMeeting);
             }
-
-            // Inform the user that the meeting has been cancelled and avaislability updated
             Console.WriteLine("Meeting cancelled and availability updated.");
         }
         else
@@ -1606,7 +1596,6 @@ void UpdateAvailabilityStudent(Student student)
         {
             try
             {
-                // Read and parse the user's input for AM or PM selection
                 selection = int.Parse(Console.ReadLine());
             }
             catch (Exception ex)
@@ -1854,12 +1843,12 @@ void RemoveAvailabilityTimePs(PersonalSupervisor personalSupervisor)
         // Save the update d XML document
         xmlDoc.Save(truePath);
 
-        // Inform the personal supervisor that the availability time has been removed
+        // Inform the personal supervsor that the availability time has been removed
         Console.WriteLine($"Availability time {timeToRemove} removed.");
     }
     catch (Exception ex)
     {
-        // Print error message if an exception occurs
+        // Print error message if an eception occurs
         Console.WriteLine("Error in removing availability time for personal supervisor: " + ex.Message);
     }
 }
